@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M16 8 C16 5 17 3 20 2" stroke="#5f8f3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="9.5" cy="18.5" rx="7.5" ry="10" fill="#cfc4b8"/>
+  <ellipse cx="22.5" cy="18.5" rx="7.5" ry="10" fill="#cfc4b8"/>
+  <ellipse cx="16" cy="18.5" rx="9" ry="11" fill="#f5efe6"/>
+  <text x="16" y="22.3" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="900" text-anchor="middle" fill="#c46a30">MD</text>
+</svg>

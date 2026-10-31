@@ -1,0 +1,111 @@
+{
+  "name": "pumpkin-spice",
+  "displayName": "Pumpkin Spice",
+  "description": "A spooky dark Halloween theme in pumpkin orange and bone white, with pumpkin file icons and a haunted status bar.",
+  "version": "0.9.0",
+  "publisher": "radum",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "halloween",
+    "pumpkin",
+    "orange",
+    "dark",
+    "spooky"
+  ],
+  "galleryBanner": {
+    "color": "#141017",
+    "theme": "dark"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Pumpkin Spice",
+        "uiTheme": "vs-dark",
+        "path": "./themes/pumpkin-spice-color-theme.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "pumpkin-spice-icons",
+        "label": "Pumpkin Spice Icons",
+        "path": "./themes/pumpkin-spice-icon-theme.json"
+      }
+    ],
+    "viewsContainers": {
+      "secondarySidebar": [
+        {
+          "id": "pumpkinPetSidebar",
+          "title": "Pumpkin Pet",
+          "icon": "media/pet-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "pumpkinPetSidebar": [
+        {
+          "type": "webview",
+          "id": "pumpkinSpice.pet",
+          "name": "Pumpkin Pet"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "pumpkinSpice.spook",
+        "title": "Pumpkin Spice: Summon a Spooky Message"
+      },
+      {
+        "command": "pumpkinSpice.pet.summonGhost",
+        "title": "Pumpkin Spice: Summon Evil Ghost"
+      }
+    ],
+    "configuration": {
+      "title": "Pumpkin Spice",
+      "properties": {
+        "pumpkinSpice.statusBar.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show spooky messages and the Halloween countdown in the status bar."
+        },
+        "pumpkinSpice.pet.sleepAfterSeconds": {
+          "type": "number",
+          "default": 30,
+          "minimum": 5,
+          "description": "How long (in seconds) without typing before the Pumpkin Pet falls asleep."
+        },
+        "pumpkinSpice.pet.background": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the pixel-art night scene behind the Pumpkin Pet."
+        },
+        "pumpkinSpice.pet.evilGhostMinutes": {
+          "type": "number",
+          "default": 3,
+          "minimum": 0,
+          "description": "Roughly how often (in minutes) an evil ghost comes to bother the Pumpkin Pet. Set to 0 to turn evil ghosts off."
+        },
+        "pumpkinSpice.statusBar.intervalSeconds": {
+          "type": "number",
+          "default": 30,
+          "minimum": 5,
+          "description": "How often (in seconds) the status bar message changes."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "icons": "node scripts/generate-icons.js",
+    "package": "npx @vscode/vsce package --allow-missing-repository"
+  }
+}
